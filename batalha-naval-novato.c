@@ -14,7 +14,7 @@ int main(){
         }
         
         }
-    printf("TABULEIRO BATALHA NAVAL \n");    
+    printf("TABULEIRO BATALHA NAVAL \n\n");    
     printf("%s %s %s %s %s %s %s %s %s %s %s \n", colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10]);
     for (int l = 0; l < 10; l++) {
         for (int c = 0; c < 1; c++) {
