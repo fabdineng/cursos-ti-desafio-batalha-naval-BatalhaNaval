@@ -15,10 +15,25 @@ int main(){
         for (int c = 0; c < 10; c++) {
             tabuleiro[l][c] = 0;
         }
-    
+        if (posicao_navio_azul = 'v') {
+        pos_navio_c = 4;
+        pos_navio_l = 5;
+        for (l_az = pos_navio_l, c_az = pos_navio_c; l_az < (pos_navio_l+3); l_az++) {
+            //navio_azul[l_az][c_az] = 3;
+            tabuleiro[l_az][c_az] = 3;
         }
+        }
+        else {
+        pos_navio_c = 4;
+        pos_navio_l = 5;
+        for (c_az = 0, l_az = pos_navio_l; c_az < 3; c_az++) {
+            //navio_azul [l_az][c_az] = 3;
+            tabuleiro[l_az][c_az] = 3;
+        }
+        }
+    }
         // inicializando a posição do navio azul
-    if (posicao_navio_azul = 'v') {
+    /*if (posicao_navio_azul = 'v') {
         pos_navio_c = 1;
         for (l_az = 0, c_az = pos_navio_c; l_az < 3; l_az++) {
             //navio_azul[l_az][c_az] = 3;
@@ -31,7 +46,6 @@ int main(){
             //navio_azul [l_az][c_az] = 3;
             tabuleiro[l_az][c_az] = 3;
         }
-
     }
     // inicializando a posição do navio vermelho
     if (poisicao_navio_vermelho = 'v') {
@@ -49,7 +63,7 @@ int main(){
         }
 
     }
-
+*/
     printf("TABULEIRO BATALHA NAVAL \n\n");    // IMPRIMINDO A MATRIZ DO TABULEIRO
     printf("%s %s %s %s %s %s %s %s %s %s %s \n", colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10]);
     for (int l = 0; l < 10; l++) {
