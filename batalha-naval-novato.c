@@ -3,68 +3,40 @@
 int main(){
 
     
-    char *colunas[11] = {"  ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"}; // VETOR PARA INFORMAR AS COLUNAS DO TABULEIRO
-    int tabuleiro [10] [10]; // MATRIZ PARA INICIALIZAR O TABULEIRO 10X10
-    int linha = 1; // VARIÁVEL PARA EXIBIR O NUMERO DA LINHA DO TABULEIRO
-    int navio_azul [3][3], navio_vermelho[3][3]; // MATRIZ POSIÇÃO NAVIO
-    int pos_navio_c = 0, pos_navio_l = 0;
-    char posicao_navio_azul = 'v', poisicao_navio_vermelho = 'h';
-    int l_az, c_az, l_vm, c_vm;
 
-    for (int l = 0; l < 10; l++) { // INICIALIZANDO A MATRIZ DO TABULEIRO
+    char *colunas[11] = {"  ", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+    int tabuleiro [10] [10];
+    int cont = 0; 
+    int linha = 1;
+    int col_nav_v, col_nav_h, lin_nav_v, lin_nav_h;
+    
+    for (int l = 0; l < 10; l++) {
         for (int c = 0; c < 10; c++) {
             tabuleiro[l][c] = 0;
         }
-        if (posicao_navio_azul = 'v') {
-        pos_navio_c = 4;
-        pos_navio_l = 5;
-        for (l_az = pos_navio_l, c_az = pos_navio_c; l_az < (pos_navio_l+3); l_az++) {
-            //navio_azul[l_az][c_az] = 3;
-            tabuleiro[l_az][c_az] = 3;
-        }
-        }
-        else {
-        pos_navio_c = 4;
-        pos_navio_l = 5;
-        for (c_az = 0, l_az = pos_navio_l; c_az < 3; c_az++) {
-            //navio_azul [l_az][c_az] = 3;
-            tabuleiro[l_az][c_az] = 3;
-        }
-        }
+        
     }
-        // inicializando a posição do navio azul
-    /*if (posicao_navio_azul = 'v') {
-        pos_navio_c = 1;
-        for (l_az = 0, c_az = pos_navio_c; l_az < 3; l_az++) {
-            //navio_azul[l_az][c_az] = 3;
-            tabuleiro[l_az][c_az] = 3;
-        }
-    }
-    else {
-        pos_navio_l = 1;
-        for (c_az = 0, l_az = pos_navio_l; c_az < 3; c_az++) {
-            //navio_azul [l_az][c_az] = 3;
-            tabuleiro[l_az][c_az] = 3;
-        }
-    }
-    // inicializando a posição do navio vermelho
-    if (poisicao_navio_vermelho = 'v') {
-        pos_navio_c = 1;
-        for (l_vm = 0, c_vm = pos_navio_c; l_vm < 3; l_vm++) {
-            navio_azul[l_vm][c_vm] = 3;
-            //printf("%d %d %d", navio_azul[l_az][c_az], navio_azul[l_az][c_az], navio_azul[l_az][c_az]);
-        }
-    }
-    else {
-        pos_navio_l = 1;
-        for (c_vm = 0, l_vm = pos_navio_l; c_vm < 3; c_vm++) {
-            navio_vermelho [l_vm][c_vm] = 3;
-            //printf("%d %d %d", navio_azul[l_az][c_az], navio_azul[l_az][c_az], navio_azul[l_az][c_az]);
-        }
+    int navio_vertical[3] = {3, 3, 3};
+    int navio_horizontal[3] = {3, 3, 3};
+//printf("%d%d%d\n", tabuleiro[4][4], tabuleiro[4][5], tabuleiro[4][6]);
+     //printf("%d\n%d\n%d\n", tabuleiro[6][6], tabuleiro[7][6], tabuleiro[8][6]);
+    lin_nav_h = 4;
+    col_nav_h = 4;
+    lin_nav_v = 6;
+    col_nav_v = 6;
 
+    for(int c = col_nav_h, l = lin_nav_h; c < (col_nav_h + 3); c++){
+        tabuleiro[l][c] = navio_horizontal[cont];
+        cont++;
     }
-*/
-    printf("TABULEIRO BATALHA NAVAL \n\n");    // IMPRIMINDO A MATRIZ DO TABULEIRO
+    cont = 0;
+
+    for(int l = lin_nav_v, c = col_nav_v; l < (lin_nav_v+3); l++){
+        tabuleiro[l][c] = navio_vertical[cont];
+        cont++;
+    }
+  
+    printf("TABULEIRO BATALHA NAVAL \n\n");    
     printf("%s %s %s %s %s %s %s %s %s %s %s \n", colunas[0], colunas[1], colunas[2], colunas[3], colunas[4], colunas[5], colunas[6], colunas[7], colunas[8], colunas[9], colunas[10]);
     for (int l = 0; l < 10; l++) {
         for (int c = 0; c < 1; c++) {
@@ -75,10 +47,12 @@ int main(){
                 printf("%d %d %d %d %d %d %d %d %d %d %d \n", linha, tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c], tabuleiro[l][c]);
                 }
         }
-    linha += 1;    
-    }
-
+    linha += 1;
     
+    }
+    //printf("%d%d%d%d%d\n", tabuleiro[4][3], tabuleiro[4][4], tabuleiro[4][5], tabuleiro[4][6], tabuleiro[4][7]);
+     //printf("%d\n%d\n%d\n%d\n%d", tabuleiro[5][6], tabuleiro[6][6], tabuleiro[7][6], tabuleiro[8][6], tabuleiro[9][6]);
+     
 
     return 0;
 }
