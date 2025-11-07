@@ -23,6 +23,7 @@ int main(){
     int navio_horizontal[3] = {3, 3, 3};
     int navio_diagonal[3] = {3, 3, 3};
 
+    // atribuindo valores para as matrizes de habilidade
     for (int l = 0; l < 5; l++){
         for (int c = 0; c < 5; c++){
             if (l == 1 && c == 2){
@@ -36,9 +37,28 @@ int main(){
             }
         }
     }
+    for (int l = 0; l < 5; l++){
+        for (int c = 0; c < 5; c++){
+            if (l < 2 && l > -1 && c == 2){
+                mat_hab_cruz[l][c] = 5;
+            } else if (l == 2){
+                mat_hab_cruz[l][c] = 5;
+            }else if (l > 2 && l < 6 && c == 2){
+                mat_hab_cruz[l][c] = 5;
+            }else {
+                mat_hab_cruz[l][c] = 0;
+            }
+        }
+    }
 for (int l = 0; l < 5; l++){
     for(int c = 0; c < 5; c++){
         printf("%d", mat_hab_cone[l][c]);
+    }
+    printf("\n");
+}
+for (int l = 0; l < 5; l++){
+    for(int c = 0; c < 5; c++){
+        printf("%d", mat_hab_cruz[l][c]);
     }
     printf("\n");
 }
@@ -80,8 +100,8 @@ for (int l = 0; l < 5; l++){
     printf("\t"); 
     for(int i = 0; i < 10; i++){
         printf("%s ", colunas[i]);
-     }
-     printf("\n"); 
+    }
+    printf("\n"); 
     for (int l = 0; l < 10; l++) {
         printf("%d\t", linha);
         for (int c = 0; c < 10; c++) {
