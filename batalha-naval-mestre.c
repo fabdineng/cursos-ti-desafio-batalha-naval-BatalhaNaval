@@ -50,7 +50,7 @@ int main(){
             }
         }
     }
-for (int l = 0; l < 5; l++){
+/*for (int l = 0; l < 5; l++){
     for(int c = 0; c < 5; c++){
         printf("%d", mat_hab_cone[l][c]);
     }
@@ -61,7 +61,7 @@ for (int l = 0; l < 5; l++){
         printf("%d", mat_hab_cruz[l][c]);
     }
     printf("\n");
-}
+}*/
 // determinando as posições dos navios
     lin_nav_h = 4;
     col_nav_h = 4;
@@ -100,7 +100,7 @@ for (int l = 0; l < 5; l++){
     printf("\t"); 
     for(int i = 0; i < 10; i++){
         printf("%s ", colunas[i]);
-    }
+     }
     printf("\n"); 
     for (int l = 0; l < 10; l++) {
         printf("%d\t", linha);
@@ -108,7 +108,6 @@ for (int l = 0; l < 5; l++){
             printf("%d ", tabuleiro[l][c]);
         }
         
-       
     linha += 1;
     printf("\n");
     }
