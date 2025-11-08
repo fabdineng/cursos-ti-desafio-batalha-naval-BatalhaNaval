@@ -10,7 +10,7 @@ int main(){
     int linha = 1;
     int col_nav_v, col_nav_h, lin_nav_v, lin_nav_h;
     int col_nav1_diag, lin_nav1_diag, lin_nav2_diag, col_nav2_diag;
-    int mat_hab_cone[5][5], mat_hab_cruz[3][3], mat_hab_octa[5][5];
+    int mat_hab_cone[5][5], mat_hab_cruz[5][5], mat_hab_octa[5][5];
     int lin_cone, col_cone, lin_cruz, col_cruz, lin_octa, col_octa;
 
 // atribuindo valores ao tabuleiro e navios
@@ -28,9 +28,9 @@ int main(){
         for (int c = 0; c < 5; c++){
             if (l == 1 && c == 2){
                 mat_hab_cone[l][c] = 5;
-            } else if (l == 2 && 1 <= c && c <= 3){
+            } else if (l == 2 && 0 < c && c < 4){
                 mat_hab_cone[l][c] = 5;
-            }else if (l == 3 && 0 <= c && c <= 4){
+            }else if (l == 3 && -1 < c && c < 5){
                 mat_hab_cone[l][c] = 5;
             }else {
                 mat_hab_cone[l][c] = 0;
@@ -50,27 +50,60 @@ int main(){
             }
         }
     }
-/*for (int l = 0; l < 5; l++){
-    for(int c = 0; c < 5; c++){
-        printf("%d", mat_hab_cone[l][c]);
+    for (int l = 0; l < 5; l++){
+        for (int c = 0; c < 5; c++){
+            if ((l == 0 || l == 4) && c == 2){
+                mat_hab_octa[l][c] = 5;
+            } else if ((l == 1 || l == 3) && (0 < c && c < 4)){
+                mat_hab_octa[l][c] = 5;
+            }else if (l == 2){
+                mat_hab_octa[l][c] = 5;
+            }else {
+                mat_hab_octa[l][c] = 0;
+            }
+        }
     }
-    printf("\n");
-}
-for (int l = 0; l < 5; l++){
-    for(int c = 0; c < 5; c++){
-        printf("%d", mat_hab_cruz[l][c]);
-    }
-    printf("\n");
-}*/
+
 // determinando as posições dos navios
-    lin_nav_h = 4;
-    col_nav_h = 4;
-    lin_nav_v = 6;
-    col_nav_v = 6;
-    lin_nav1_diag = 6;
-    col_nav1_diag = 1;
-    lin_nav2_diag = 1;
-    col_nav2_diag = 6;
+    lin_nav_h = 0;
+    col_nav_h = 0;
+    lin_nav_v = 7;
+    col_nav_v = 9;
+    lin_nav1_diag = 7;
+    col_nav1_diag = 0;
+    lin_nav2_diag = 0;
+    col_nav2_diag = 7;
+
+// determinando as posições das habilidades
+    lin_cone = 0;
+    col_cone = 5;
+    lin_cruz = 2;
+    col_cruz = 0;
+    lin_octa = 5;
+    col_octa = 4;
+
+// inserindo as posições das habilidades no tabuleiro
+    for(int l = 0; l < 5; l++){
+        for(int c = 0; c < 5; c++){
+            if (mat_hab_cone[l][c] > 0){
+                tabuleiro[l+lin_cone][c+col_cone] = mat_hab_cone[l][c];
+            }
+        }
+    }
+    for(int l = 0; l < 5; l++){
+        for(int c = 0; c < 5; c++){
+            if (mat_hab_cruz[l][c] > 0){
+                tabuleiro[l+lin_cruz][c+col_cruz] = mat_hab_cruz[l][c];
+            }
+        }
+    }
+    for(int l = 0; l < 5; l++){
+        for(int c = 0; c < 5; c++){
+            if (mat_hab_octa[l][c] > 0){
+                tabuleiro[l+lin_octa][c+col_octa] = mat_hab_octa[l][c];
+            }
+        }
+    }
 
 // inserindo as posições dos navios no tabuleiro
     for(int c = col_nav_h, l = lin_nav_h; c < (col_nav_h + 3); c++){
